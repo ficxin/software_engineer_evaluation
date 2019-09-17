@@ -1,6 +1,4 @@
-.App {
-  text-align: center;
-}
+//  Login Component
 
 .login-form-container {
   position: absolute;
@@ -28,17 +26,61 @@
     width: 300px;
   }
 
-  button {
-    font-weight: 700;
-    width: 100%;
-    color: #fff;
-    background-color: #3498DB;
-    padding: 1rem;
-    border: none;
-    border-radius: 2px;
+  a {
+    text-decoration: none;
 
-    &:disabled {
-      background-color: #AED6F1;
+    button {
+      text-decoration: none;
+      font-weight: 700;
+      width: 100%;
+      color: #fff;
+      background-color: #3498DB;
+      padding: 1rem;
+      border: none;
+      border-radius: 2px;
+  
+      &:disabled {
+        background-color: #AED6F1;
+      }
     }
   }
 }
+
+// Search Component
+.search-container {
+  position: absolute;
+  padding: 2rem 4rem;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 1em;
+  width: fit-content;
+  
+  * {
+    font-size: 1em;
+  }
+
+  label {
+    display: block;
+    text-align: left;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+  }
+
+  input {
+    padding: 0.6rem 0.4rem;
+    border: 2px #EAECEE solid;
+    border-radius: 2px;
+    width: 50vw;
+  }
+
+  button {
+    padding: 0.6rem;
+    margin-left: 0.4rem;
+    font-weight: 700;
+    color: #fff;
+    background-color: #3498DB;
+    border: 2px #3498DB solid;
+    border-radius: 2px;
+  }
+}
+
