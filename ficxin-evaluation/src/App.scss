@@ -47,6 +47,7 @@
 }
 
 // Search Component
+
 .search-container {
   position: absolute;
   padding: 2rem 4rem;
@@ -89,6 +90,7 @@
     justify-content: flex-start;
     align-items: center;
     margin-top: 2rem;
+    cursor: pointer;
 
     img {
       height: 100px;
@@ -103,6 +105,47 @@
       text-align: left;
       list-style-type: none;
       display: inline-block;
+    }
+  }
+}
+
+// Image Modal
+
+#modal {
+  position: relative;
+  z-index: 10000;
+}
+
+.modal {
+  background-color: rgba(0,0,0,0.7);
+  position: fixed;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  section {
+    position: relative;
+    
+    img {
+      height: 60vh;
+      width: 60vw;
+      background-size: contain;
+    }
+  
+    button {
+      cursor: pointer;
+      position: absolute;
+      top: 0;
+      right: 0;
+      background-color: transparent;
+      color: white;
+      border: none;
+      font-size: 2em;
+      padding: 0.2rem 0.6rem;
     }
   }
 }

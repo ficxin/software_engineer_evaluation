@@ -59,6 +59,22 @@ function SearchResult({data, imageUrl, toggleModal}) {
   )
 }
 
+function Image({ imageUrl, toggleModal }) {
+  return (
+    <div className="modal">
+      <section>
+        <button onClick={toggleModal}>
+          &#10005;
+        </button>
+        <img
+          className='image-bg'
+          src={imageUrl}
+        />
+      </section>
+    </div>
+  );
+}
+
 class Search extends React.Component {
   state = {
     data: '',
@@ -93,12 +109,19 @@ class Search extends React.Component {
         <div className="search-container">
           <SearchInput onSubmit={this.handleSumbit} />
           {data &&
-            <SearchResult data={data} imageUrl={href} toggleModal={this.handleModal} />
+            <SearchResult 
+              data={data} 
+              imageUrl={href} 
+              toggleModal={this.handleModal} 
+            />
           }
         </div>
         {modal && 
           <Modal>
-            <div>Modal</div>
+            <Image 
+              imageUrl={href} 
+              toggleModal={this.handleModal}
+            />
           </Modal>
         }
       </React.Fragment>
