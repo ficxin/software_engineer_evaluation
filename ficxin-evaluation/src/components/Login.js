@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import { Link } from "react-router-dom";
 
 class Login extends Component {
   state = {
@@ -27,8 +28,9 @@ class Login extends Component {
             Email Address
           </label>
           <input
-            type="text"
+            type="email"
             id="email"
+            autoComplete="off"
             placeholder="email"
             value={this.state.email}
             onChange={this.handleChange}
@@ -37,18 +39,22 @@ class Login extends Component {
             Password
           </label>
           <input
-            type="text"
+            type="password"
             id="password"
+            autoComplete="off"
             placeholder="password"
             value={this.state.password}
             onChange={this.handleChange}
           />
-          <button
-            type="submit"
-            disabled={!this.state.email || !this.state.password}
-          >
-            Sign In
-          </button>
+
+          <Link to="/search/">
+            <button
+              type="submit"
+              disabled={!this.state.email || !this.state.password}
+            >
+              Sign In
+            </button>
+          </Link>
         </form>
       </div>
     )
