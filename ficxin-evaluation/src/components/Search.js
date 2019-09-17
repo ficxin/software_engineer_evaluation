@@ -1,4 +1,5 @@
 import React from 'react';
+import { getImages } from '../utils/api'
 
 class SearchInput extends React.Component {
   state = {
@@ -39,7 +40,22 @@ class SearchInput extends React.Component {
 
 class Search extends React.Component {
   state = {
+    data: '',
+    modal: false
+  }
 
+  handleSumbit = (value) => {
+    getImages(value)
+      .then(({ items }) => {
+        console.log(items);
+        const { data, links } = items[0]
+        const { href } = links[0];
+
+        this.setState({
+          data,
+          href
+        })
+      })
   }
 
   render() {
