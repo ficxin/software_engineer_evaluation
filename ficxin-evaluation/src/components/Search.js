@@ -49,6 +49,7 @@ function SearchResult({data, imageUrl, toggleModal}) {
         <img
           className='image-preview'
           src={imageUrl}
+          alt={title}
         />
         <ul>
           <li>{title}</li>
@@ -69,6 +70,7 @@ function Image({ imageUrl, toggleModal }) {
         <img
           className='image-bg'
           src={imageUrl}
+          alt="modal"
         />
       </section>
     </div>
@@ -130,7 +132,7 @@ class Search extends React.Component {
         {modal && 
           <Modal>
             <Image 
-              imageUrl={href} 
+              imageUrl={href}
               toggleModal={this.handleModal}
             />
           </Modal>

@@ -9,7 +9,6 @@ class Login extends Component {
 
   handleSumbit = (ev) => {
     ev.preventDefault();
-    alert(ev.target)
   }
 
   handleChange = (ev) => {
