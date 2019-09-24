@@ -77,20 +77,29 @@ function Image({ imageUrl, toggleModal }) {
 
 class Search extends React.Component {
   state = {
-    data: '',
-    modal: false
+    data: null,
+    href: null,
+    error: null,
+    modal: false,
   }
 
   handleSumbit = (value) => {
     getImages(value)
       .then(({ items }) => {
-        console.log(items);
         const { data, links } = items[0]
         const { href } = links[0];
 
         this.setState({
           data,
-          href
+          href,
+          error: null,
+        })
+      })
+      .catch(() => {
+        this.setState({
+          data: null,
+          href: null,
+          error: `There is no data for this search term at the moment.`
         })
       })
   }
@@ -102,12 +111,14 @@ class Search extends React.Component {
   }
 
   render() {
-    const { data, href, modal } = this.state;
+    const { data, href, modal, error } = this.state;
 
     return (
       <React.Fragment>
         <div className="search-container">
           <SearchInput onSubmit={this.handleSumbit} />
+          {error && <p>{error}</p>}
+
           {data &&
             <SearchResult 
               data={data} 
